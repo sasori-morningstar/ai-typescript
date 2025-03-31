@@ -1,0 +1,25 @@
+{
+  "name": "tensorflow-typescript",
+  "version": "1.0.0",
+  "description": "A simple example of using TensorFlow.ts",
+  "main": "src/app.ts",
+  "type": "module",
+  "scripts": {
+    "start": "ts-node src/app.ts",
+    "dev": "nodemon",
+    "build": "tsc",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@tensorflow/tfjs": "^4.22.0",
+    "@tensorflow/tfjs-node": "^4.22.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.9",
+    "ts-jest": "^29.3.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
+  }
+}

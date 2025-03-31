@@ -1,0 +1,9 @@
+
+{
+    "watch": ["src"],
+    "ext": "ts",
+    "exec": "node --import 'data:text/javascript,import { register } from \"node:module\"; import { pathToFileURL } from \"node:url\"; register(\"ts-node/esm\", pathToFileURL(\"./\"));' src/app.ts",
+    "env": {
+        "NODE_OPTIONS": "--no-deprecation"
+    }
+}
