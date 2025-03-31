@@ -4,6 +4,10 @@
 const tensor2 = tf.tensor([1, 2, 3, 4], [2, 2])
 tf.add(tensor1, tensor2).print()*/
 
-import { trainModel } from "./linear.ts";
+/*import { trainModel } from "./linear.ts";
 
-trainModel()
+trainModel()*/
+
+import { classifyImage } from "./mobilenet.ts";
+
+classifyImage()
