@@ -1,4 +1,4 @@
-import axios, { AxiosResponse } from 'axios';
+/*import axios, { AxiosResponse } from 'axios';
 
 // Define the structure of the response that Gemma3 returns.
 interface GemmaResponse {
@@ -41,7 +41,7 @@ const queryGemma3 = async (prompt: string): Promise<void> => {
 
         // When stream ends, log the complete response
         response.data.on('end', () => {
-            console.log('\n\nFull Response:', fullResponse);
+            //console.log('\n\nFull Response:', fullResponse);
         });
 
         // Handle stream errors
@@ -53,5 +53,34 @@ const queryGemma3 = async (prompt: string): Promise<void> => {
         console.error('Error querying Gemma 3:', error);
     }
 };
+*/
 
-export { queryGemma3 }
+import ollama from 'ollama';
+
+// Define the function to query Gemma3
+const queryGemma3 = async (prompt: string): Promise<void> => {
+    try {
+        const response = await ollama.chat({
+            model: 'gemma3',
+            messages: [{ role: 'user', content: prompt }],
+            stream: true // Enable streaming response
+        });
+
+        let fullResponse = '';
+
+        for await (const part of response) {
+            if (part.message?.content) {
+                fullResponse += part.message.content;
+                process.stdout.write(part.message.content); // Print incrementally
+            }
+        }
+
+        // Log the full response when complete
+        console.log('\n\nFull Response:', fullResponse);
+
+    } catch (error) {
+        console.error('Error querying Gemma3:', error);
+    }
+};
+
+export { queryGemma3 };
