@@ -5,3 +5,12 @@ node_modules/
 
 package-lock.json
 
+# Ignore Python virtual environment
+python/venv/
+
+# Ignore Python compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
