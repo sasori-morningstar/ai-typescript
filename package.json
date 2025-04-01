@@ -1,7 +1,7 @@
 {
-  "name": "tensorflow-typescript",
+  "name": "ai-typescript",
   "version": "1.0.0",
-  "description": "A simple example of using TensorFlow.ts",
+  "description": "A simple example of using AI with Typescript",
   "main": "src/app.ts",
   "type": "module",
   "scripts": {
@@ -14,6 +14,7 @@
     "@tensorflow-models/mobilenet": "^2.1.1",
     "@tensorflow/tfjs": "^4.22.0",
     "@tensorflow/tfjs-node": "^4.22.0",
+    "axios": "^1.8.4",
     "readline-sync": "^1.4.10",
     "sharp": "^0.33.5"
   },

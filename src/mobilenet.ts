@@ -35,7 +35,7 @@ const classifyImage = async () => {
         const model = await tf.loadGraphModel(MODEL_PATH);
         console.log("Model loaded successfully!");
 
-        const image = await loadImage('assets/img/dog2.jpg');
+        const image = await loadImage('assets/img/baby.jpeg');
 
         console.log("Expanding dimensions...");
         const input = image.expandDims(0); // Model expects batch shape [1, 128, 128, 3]
