@@ -29,3 +29,6 @@ Navigate to the Python directory and install dependencies:
 cd python
 pip install -r requirements.txt
 ```
+
+### Audio Transcription
+- ffmpeg.
