@@ -16,6 +16,7 @@ This repository includes implementations of:
 - **Text Generation** - Powered by the Gemma3 model
 - **Image Generation** - Using Stable Diffusion
 - **Audio Transcription** - Using Whisper by Open AI
+- **Text to Audio** - Using text2wav (no AI here)
 
 ## Requirements
 

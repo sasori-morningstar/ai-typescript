@@ -4,6 +4,7 @@ import { classifyImage } from "./mobilenet.ts";
 import { queryGemma3 } from './text.ts';
 import { generateAndSaveImage } from "./image.ts";
 import { transcribe } from "./vocal.ts";
+import { speak } from "./speak.ts";
 
 const rl = readline.createInterface({
     input: process.stdin,
@@ -13,7 +14,7 @@ const rl = readline.createInterface({
 const main = async () => {
     process.stdout.write("\x1Bc");
     console.log('## AI TS Testing\n');
-    console.log("## Available commands:\nlinear-regression,\nimage-classification,\ntext-generation,\nimage-generation,\naudio-to-text\nhelp\nexit\n");
+    console.log("## Available commands:\nlinear-regression,\nimage-classification,\ntext-generation,\nimage-generation,\naudio-to-text\ntext-to-audio\nhelp\nexit\n");
 
     while (true) {
         const userInput = await askQuestion("=> What do you want to test: ");
@@ -50,8 +51,15 @@ const main = async () => {
                 await transcribe()
                 .then(() => console.log("Audio transcribed succesffuly."))
                 .catch((err) => console.error("Failed to generate image:", err));
+        } else if(userInput === 'text-to-audio'){
+            const text = await askQuestion("Enter your text to convert to audio => ");
+            if(text){    
+                await speak(text)
+                .then(() => console.log("Audio generation complete."))
+                .catch((err) => console.error("Failed to generate audio:", err));
+            }
         }else if (userInput === "help") {
-            console.log("## Available commands:\nlinear-regression,\nimage-classification,\ntext-generation,\nimage-generation,\naudio-to-text\nhelp\nexit\n");
+            console.log("## Available commands:\nlinear-regression,\nimage-classification,\ntext-generation,\nimage-generation,\naudio-to-text\ntext-to-audio\nhelp\nexit\n");
         } else {
             console.log("\nInvalid input. Please try again. Type 'help' for options.");
         }
