@@ -15,6 +15,7 @@ This repository includes implementations of:
 - **Image Classification** - Using the MobileNet model
 - **Text Generation** - Powered by the Gemma3 model
 - **Image Generation** - Using Stable Diffusion
+- **Audio Transcription** - Using Whisper by Open AI
 
 ## Requirements
 
